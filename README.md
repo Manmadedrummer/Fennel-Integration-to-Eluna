@@ -142,6 +142,17 @@ Try adding a debug print to your Fennel script:
 If you see the message in your server console, the script is running.
 
 
+
+## 🛠️ Contributing & Feedback
+
+This project was built out of curiosity — but if you find it useful, feel free to modify, extend, or adapt it however you like.
+
+If you run into issues, have ideas for improvements, or want to add examples (like branching dialogs or quest logic), I’d love to see them. Pull requests, bug reports, and suggestions are all welcome.
+
+Let’s see what Fennel can do in Azeroth.
+
+
+
 ## ❤️ Credits
 
 - [Fennel](https://fennel-lang.org) — Lua-compiled Lisp  
