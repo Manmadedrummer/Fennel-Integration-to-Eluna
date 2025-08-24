@@ -30,6 +30,7 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 2. Create a subfolder called `fnl/`
 3. Add your Fennel scripts there. Example: `npc_hello.fnl`
 4. Reload Eluna: `.reload Eluna`
+5. (Optional) If your loader registers a player-login hook, logging in will auto-run all `.fnl` files.
 
 
 
@@ -39,7 +40,7 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 
 This script makes NPC #75 greet the player and give them a Hearthstone.
 
-```clojure
+```
 (do
 (local creature-say (. _ENV "creature-say"))
 (local player-say (. _ENV "player-say"))
@@ -52,5 +53,25 @@ This script makes NPC #75 greet the player and give them a Hearthstone.
  (player-give-item player 6948 1)) ;; Hearthstone
 
 (register-gossip-event 75 1 on-hello))
+```
+
+
+## 🔧 How the Loader Works (high level)
+
+- Loads `fennel.lua` and keeps its API table (no `install()` call needed)  
+- For each `.fnl` file:  
+  1. Reads source  
+  2. `compileString` → Lua  
+  3. `load` the compiled Lua with a custom `_ENV` that includes Eluna helpers  
+  4. Executes the chunk  
+
+This lets `.fnl` scripts call Eluna exactly like Lua does.
+
+
+## ❤️ Credits
+
+- [Fennel](https://fennel-lang.org) — Lua-compiled Lisp  
+- [Eluna](https://github.com/azerothcore/eluna) — WoW scripting API  
+- Built for curiosity and fun 😄
 
 
