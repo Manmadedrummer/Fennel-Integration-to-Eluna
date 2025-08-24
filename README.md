@@ -156,10 +156,14 @@ Let’s see what Fennel can do in Azeroth.
 
 
 ## ❤️ Credits
-
 - [Fennel](https://fennel-lang.org) — Lua-compiled Lisp  
 - [Eluna](https://github.com/azerothcore/eluna) — WoW scripting API  
 - Built for curiosity and fun 
+
+---
+
+## 📜 License
+MIT — same license used by Fennel. Feel free to use, modify, or build on it.
 
 
 
