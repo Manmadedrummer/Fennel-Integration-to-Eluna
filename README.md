@@ -28,16 +28,6 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 
 ---
 
-## 📁 Project Structure
-
-| File/Folder          | Description                                      |
-|----------------------|--------------------------------------------------|
-| `fennel_loader.lua`  | Main loader that bootstraps Fennel into Eluna   |
-| `fennel.lua`         | The Fennel compiler (Lua-only version)          |
-| `fnl/`               | Folder for all your Fennel scripts              |
-
----
-
 # 📁 Project Structure
 
 | File/Folder        | Description                                      |
@@ -83,6 +73,6 @@ This lets `.fnl` scripts call Eluna exactly like Lua does.
 
 - [Fennel](https://fennel-lang.org) — Lua-compiled Lisp  
 - [Eluna](https://github.com/azerothcore/eluna) — WoW scripting API  
-- Built for curiosity and fun 😄
+- Built for curiosity and fun 
 
 
