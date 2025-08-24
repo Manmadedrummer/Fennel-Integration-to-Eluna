@@ -48,7 +48,7 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 
 This script makes NPC #75 greet the player and give them a Hearthstone.
 
-```clojure
+~~~
 (do
 (local creature-say (. _ENV "creature-say"))
 (local player-say (. _ENV "player-say"))
@@ -61,7 +61,7 @@ This script makes NPC #75 greet the player and give them a Hearthstone.
  (player-give-item player 6948 1)) ;; Hearthstone
 
 (register-gossip-event 75 1 on-hello))
-```
+~~~
 
 ## 🔧 How the Loader Works (high level)
 
