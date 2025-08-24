@@ -73,6 +73,75 @@ This script makes NPC #75 greet the player and give them a Hearthstone.
 This lets `.fnl` scripts call Eluna exactly like Lua does.
 
 
+## 🛠️ Troubleshooting
+
+### ❌ Parse error: expected whitespace before opening delimiter `[`
+This is the most common Fennel error when starting out. It means you wrote something like:
+
+~~~
+(fn on-hello[event player creature] ...) ;; ❌ no space before [
+~~~
+
+✅ **Fix:** Always put a space before opening brackets:
+
+~~~
+(fn on-hello [event player creature] ...) ;; ✅ correct
+~~~
+
+---
+
+### ❌ Runtime error: attempt to call field 'register-gossip-event' (a nil value)
+This means your Fennel script is trying to call a function that wasn’t injected into the environment.
+
+✅ **Fix:** Make sure your loader exposes Eluna functions like this:
+
+~~~
+env["register-gossip-event"] = function(entry, event, fn)
+    RegisterCreatureGossipEvent(entry, event, fn)
+end
+~~~
+
+And in Fennel, bind them using:
+
+~~~
+(local register-gossip-event (. _ENV "register-gossip-event"))
+~~~
+
+---
+
+### ❌ Fennel script not loading at all
+Check that your `.fnl` file is inside the correct folder:
+
+~~~
+wotlk-server-lua/fnl/
+~~~
+
+✅ **Fix:** Run `.reload eluna` or `.reload fennel` in-game to trigger the loader.
+
+---
+
+### ❌ NPC doesn’t respond
+Make sure you’re using the correct NPC entry ID in your script:
+
+~~~
+(register-gossip-event 75 1 on-hello)
+~~~
+
+✅ **Fix:** Replace `75` with the actual entry ID of your NPC in the database.
+
+---
+
+### ❌ Still stuck?
+Try adding a debug print to your Fennel script:
+
+~~~
+(local print (. _ENV "print"))
+(print "Fennel script loaded!")
+~~~
+
+If you see the message in your server console, the script is running.
+
+
 ## ❤️ Credits
 
 - [Fennel](https://fennel-lang.org) — Lua-compiled Lisp  
