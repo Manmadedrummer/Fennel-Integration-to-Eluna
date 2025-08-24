@@ -1,4 +1,8 @@
 # 🧠 Fennel Integration for Eluna
+[![Eluna](https://img.shields.io/badge/Eluna-Scripting-blue?logo=lua)](https://github.com/azerothcore/eluna)
+[![Fennel](https://img.shields.io/badge/Fennel-Lisp%20for%20Lua-green?logo=lisp)](https://fennel-lang.org)
+[![AzerothCore](https://img.shields.io/badge/AzerothCore-WoW%20Server-red?logo=worldofwarcraft)](https://github.com/azerothcore/azerothcore-wotlk)
+
 
 A lightweight runtime loader that lets you write Eluna scripts in [Fennel](https://fennel-lang.org/) — a Lisp dialect that compiles to Lua.
 
@@ -75,10 +79,6 @@ This lets `.fnl` scripts call Eluna exactly like Lua does.
 - [Eluna](https://github.com/azerothcore/eluna) — WoW scripting API  
 - Built for curiosity and fun 
 
-# 🧠 Fennel Integration for Eluna
-
-[![Eluna](https://img.shields.io/badge/Eluna-Scripting-blue?logo=lua)](https://github.com/azerothcore/eluna)
-[![Fennel](https://img.shields.io/badge/Fennel-Lisp%20for%20Lua-green?logo=lisp)](https://fennel-lang.org)
 
 
 
