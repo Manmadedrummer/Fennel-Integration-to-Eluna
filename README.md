@@ -23,7 +23,7 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 1. Drop `fennel_loader.lua` and `fennel.lua` into your Eluna script folder.
 2. Create a subfolder called `fnl/`
 3. Add your Fennel scripts there. Example: `npc_hello.fnl`
-4. Reload Eluna: `.reload Eluna`
+4. Reload Eluna: `.reload eluna`
 5. *(Optional)* If your loader registers a player-login hook, logging in will auto-run all `.fnl` files.
 
 ---
