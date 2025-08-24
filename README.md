@@ -1,14 +1,8 @@
-# Fennel-Integration-to-Eluna
-A lightweight runtime loader that lets you write Eluna scripts in Fennel , a Lua-compiled Lisp. Drop .fnl files into your server and they compile + run automatically. Supports player/creature events, gossip, and Eluna API helpers out of the box.
+# 🧠 Fennel Integration for Eluna
 
+A lightweight runtime loader that lets you write Eluna scripts in [Fennel](https://fennel-lang.org/) — a Lisp dialect that compiles to Lua.
 
-
-
-
-
-# 🧠 Fennel for AzerothCore
-
-This project lets you write Eluna scripts for AzerothCore using [Fennel](https://fennel-lang.org/) — a Lisp dialect that compiles to Lua.
+Drop `.fnl` files into your server and they compile + run automatically. Supports player/creature events, gossip, and Eluna API helpers out of the box.
 
 I built this just to see if I could. No gameplay reason, no feature request — I just wanted to know: *can you embed a Lisp language into Eluna and make it work?* Turns out, yes. And it’s surprisingly clean.
 
@@ -30,9 +24,27 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 2. Create a subfolder called `fnl/`
 3. Add your Fennel scripts there. Example: `npc_hello.fnl`
 4. Reload Eluna: `.reload Eluna`
-5. (Optional) If your loader registers a player-login hook, logging in will auto-run all `.fnl` files.
+5. *(Optional)* If your loader registers a player-login hook, logging in will auto-run all `.fnl` files.
 
+---
 
+## 📁 Project Structure
+
+| File/Folder          | Description                                      |
+|----------------------|--------------------------------------------------|
+| `fennel_loader.lua`  | Main loader that bootstraps Fennel into Eluna   |
+| `fennel.lua`         | The Fennel compiler (Lua-only version)          |
+| `fnl/`               | Folder for all your Fennel scripts              |
+
+---
+
+# 📁 Project Structure
+
+| File/Folder        | Description                                      |
+|-------------------|--------------------------------------------------|
+| `fennel_loader.lua` | Main loader that bootstraps Fennel into Eluna   |
+| `fennel.lua`        | The Fennel compiler (Lua-only version)         |
+| `fnl/`              | Folder for all your Fennel scripts             |
 
 ---
 
@@ -40,7 +52,7 @@ I built this just to see if I could. No gameplay reason, no feature request — 
 
 This script makes NPC #75 greet the player and give them a Hearthstone.
 
-```
+```clojure
 (do
 (local creature-say (. _ENV "creature-say"))
 (local player-say (. _ENV "player-say"))
@@ -54,7 +66,6 @@ This script makes NPC #75 greet the player and give them a Hearthstone.
 
 (register-gossip-event 75 1 on-hello))
 ```
-
 
 ## 🔧 How the Loader Works (high level)
 
