@@ -10,6 +10,8 @@ Drop `.fnl` files into your server and they compile + run automatically. Support
 
 I built this just to see if I could. No gameplay reason, no feature request — I just wanted to know: *can you embed a Lisp language into Eluna and make it work?* Turns out, yes. And it’s surprisingly clean.
 
+👉 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get involved.
+
 ---
 
 ## 🚀 What This Does
