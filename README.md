@@ -75,4 +75,10 @@ This lets `.fnl` scripts call Eluna exactly like Lua does.
 - [Eluna](https://github.com/azerothcore/eluna) — WoW scripting API  
 - Built for curiosity and fun 
 
+# 🧠 Fennel Integration for Eluna
+
+[![Eluna](https://img.shields.io/badge/Eluna-Scripting-blue?logo=lua)](https://github.com/azerothcore/eluna)
+[![Fennel](https://img.shields.io/badge/Fennel-Lisp%20for%20Lua-green?logo=lisp)](https://fennel-lang.org)
+
+
 
